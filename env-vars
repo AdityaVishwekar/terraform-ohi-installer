@@ -1,0 +1,17 @@
+### Authentication details
+export TF_VAR_tenancy_ocid="ocid1.tenancy.oc1..aaaaaaaagyxvnqzbdmlsmzzpaqzam7brue7q47qsvl6j6c5eh56lotfa7avq"
+export TF_VAR_user_ocid="ocid1.user.oc1..aaaaaaaaxvygocvioxxuaregix7w4bnpl65ai6oucjqry2nhebdcrqtdextq"
+export TF_VAR_fingerprint="04:cd:31:f8:b4:87:e1:3c:c8:5d:3d:2d:ed:8e:1a:d0"
+export TF_VAR_private_key_path="/home/osboxes/Downloads/oci_api_key.pem"
+
+### Region
+export TF_VAR_region="us-ashburn-1"
+
+### Compartment
+export TF_VAR_compartment_ocid="ocid1.compartment.oc1..aaaaaaaaww75w4q5jgq3jywvetwsqvyyvmbjmgk3qqsybfkczveg6f3ulixa"
+
+### Public/private keys used on the instance
+export TF_VAR_ssh_public_key="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQChxoFiag1NBiaedOAmgGfuNhHJdjf658plFZHjboZ20PMZ6Ozzu9nrQHSp7b0X5DjrpHiPRsn25qTaFsI7LisRWxD41y/NVYmHHMZc2dDGUdTPtXG5QApg3EWm/1rS83qtGpj2z0qGQsRtKDm5ssT/V6l7z1ym0reFRq2j61TCnb//oaOpHD8ByV4xwaJrgEys0XOFSa4/5b2VRQ5vYYQ8wTNluvp3+OE3TI3OgLLYqUg8Fxtr0eFJ0cwAfEFX8U+yAq60Pl+00c1VN2an8vta1lTTYLntfnGUcdoFrGkH+Lqj7JMR1Xqd9rxW8mbFzX9mp76p72+WFxJ0abGCNV87"
+export TF_VAR_ssh_private_key=$(cat /home/osboxes/Downloads/oci_api_key.pem)
+export TF_LOG="ERROR"
+export TF_LOG_PATH="log"

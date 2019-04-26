@@ -1,0 +1,34 @@
+alter session set "_ORACLE_SCRIPT"=true;
+
+CREATE USER db_admin IDENTIFIED BY "BEstrO0ng_#12";
+
+CREATE BIGFILE TABLESPACE "OHI_TAB" EXTENT MANAGEMENT LOCAL AUTOALLOCATE SEGMENT SPACE MANAGEMENT AUTO DATAFILE '/u01/app/oracle/oradata/OHICO/OHICOPAAS1/oh$'
+
+CREATE BIGFILE TABLESPACE "OHI_IDX" EXTENT MANAGEMENT LOCAL AUTOALLOCATE SEGMENT SPACE MANAGEMENT AUTO DATAFILE '/u01/app/oracle/oradata/OHICO/OHICOPAAS1/oh$'
+
+CREATE DIRECTORY OHI_DPDUMP_DIR as '/u01/dbdump' ;
+
+grant READ,WRITE  on DIRECTORY OHI_DPDUMP_DIR to db_admin ;
+
+grant execute on sys.dbms_aqin to db_admin with grant option;
+
+grant execute on sys.dbms_lock to db_admin with grant option;
+
+grant execute on sys.dbms_aqadm to db_admin with grant option;
+
+grant execute on sys.dbms_aq to db_admin with grant option;
+
+grant grant any object privilege to db_admin ;
+
+GRANT EXECUTE ON ctxsys.ctx_ddl to db_admin WITH GRANT OPTION;
+
+GRANT EXECUTE ON SYS.DBMS_SYSTEM to db_admin with Grant Option ;
+
+GRANT SELECT ON SYS.V_$PARAMETER TO db_admin with grant option ;
+
+GRANT GRANT ANY OBJECT PRIVILEGE TO db_admin;
+
+grant select on v$pending_xatrans$ to db_admin;
+
+grant select on v$xatrans$ to db_admin;
+

@@ -1,0 +1,36 @@
+// Copyright (c) 2017, 2019, Oracle and/or its affiliates. All rights reserved.
+/*
+resource "null_resource" "remote-exec" {
+    provisioner "file" {
+        connection {
+            agent = false
+            timeout = "10m"
+            host = "${data.oci_core_vnic.db_node_vnic.public_ip_address}"
+            user = "${var.host_user_name}"
+            private_key = "${file("/home/osboxes/.ssh/privateKey")}"
+        }
+        source = "./scripts/"
+        destination = "~/"
+    }    
+    
+    provisioner "remote-exec" {
+        connection {
+            agent = false
+            timeout = "10m"
+            host = "${data.oci_core_vnic.db_node_vnic.public_ip_address}"
+            user = "${var.host_user_name}"
+            private_key = "${file("/home/osboxes/.ssh/privateKey")}"
+        }
+
+        inline = [
+            "sudo mv -v * /home/oracle/",
+            "sudo chown -R oracle:oinstall /home/oracle/ohidbsetup.sh",
+            "sudo chown -R oracle:oinstall /home/oracle/pl_script1.sql",
+            "sudo chmod +x /home/oracle/ohidbsetup.sh",
+            "sudo su - oracle",
+            "touch output.txt",
+            "./ohidbsetup.sh",
+        ]
+    }
+}
+*/

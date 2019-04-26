@@ -1,0 +1,18 @@
+if [ ! -d /u01/app/oracle/oradata/OHICO/ ]; then
+  mkdir -p /u01/app/oracle/oradata/OHICO;
+fi
+
+if [ ! -d /u01/app/oracle/oradata/OHICO/OHICOPAAS1/ ] ; then
+  mkdir -p /u01/app/oracle/oradata/OHICO/OHICOPAAS1;
+fi
+
+output=`sqlplus -s sys/BEstrO0ng_#12 as sysdba << EOF
+whenever sqlerror exit sql.sqlcode;
+set echo off
+set heading off
+#@?/rdbms/admin/xaview.sql
+@pl_script1.sql
+exit
+EOF`
+echo $output
+#grep SSKGXPT $trcfile
